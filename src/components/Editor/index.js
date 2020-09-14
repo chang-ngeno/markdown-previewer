@@ -4,7 +4,8 @@ export default class Editor extends React.Component {
   render() {
     return(
       <div>
-        <p>Editor</p>
+        <span className="header">Editor</span>
+        <textarea id="editor" className="textarea"></textarea>
       </div>
     )
   };

@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+  background-color: yellow;
+  .App-header {
+    background-color: #282c34;
+    min-height: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 1vmin);
+    color: white;
+  }
+
+  .App-link {
+    color: #61dafb;
+  }
+
+  section{
+    padding: 0.5em;
+    .header{
+      text-align: left;
+      //background-color: white;
+      min-height: 2vh;
+      font-size: calc(12px + 1vmin);
+      display: flex;
+      flex-direction: column;
+      color: purple;
+    }
+    .textarea{
+      width: 100%;
+      min-height: 30vh;
+      //font- family:
+      font-size:calc(10px + 1vmin);
+      color: black;
+    }
+    .textarea:focus{
+      border: 1px solid green;
+    }
+    .textarea:invalid{
+      border: 1px solid red;
+    }
+  }
+}
