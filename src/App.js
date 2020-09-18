@@ -1,28 +1,25 @@
 import React from 'react';
 import './App.scss';
 import Previewer from './components/Previewer';
-import Editor from './components/Editor'
+import Editor from './components/Editor';
+
+import { placeholder } from './constants';
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      mdText: '## Available Scripts In the project directory, you can run:### `npm start`'
+      mdText: placeholder
     };
     this.onChange = this.onChange.bind(this);
     console.log(this.state.mdText);
   }
-  onChange(event){
+  onChange(event) {
     this.setState({
       mdText: event.target.value
     });
   }
-  componentDidMount(){
-    this.setState ( {
-      mdText: '## Available Scripts In the project directory, you can run:### `npm start`'
-    });
-  }
-  render(){
+  render() {
     return (
       <div className="App">
 
@@ -30,12 +27,12 @@ class App extends React.Component {
           <h1>Markdown Previewer</h1>
         </header>
 
-        <section >
-          <Editor />
+        <section className="text-left">
+          <Editor onChange={this.onChange} text={this.state.mdText}/>
         </section>
 
-        <section >
-          <Previewer textPreview={marked(this.state.mdText)} />
+        <section className="text-left">
+          <Previewer textPreview={this.state.mdText} />
         </section>
 
       </div>

@@ -1,8 +1,14 @@
 .App {
-  text-align: center;
-  background-color: yellow;
+  $primary: #282c34;
+  $secondary: #556b2f;
+  $alternate: lightsteelblue;
+  $common-border: 1px solid $primary;
+  $shadow: 1px 1px 10px 2px darken($primary, 20%) ;
+  background-color: lighten($alternate, 5%);
+
   .App-header {
-    background-color: #282c34;
+    text-align: center;
+    background-color:$primary;
     min-height: 3vh;
     display: flex;
     flex-direction: column;
@@ -15,30 +21,70 @@
   .App-link {
     color: #61dafb;
   }
+    
+  .header {
+    font-size: calc(12px + 1vmin);
+    display: inline-block;
+    width: 99%;
+    border: $common-border;
+    padding: 4px 4px 3px 3px;
+    box-shadow: $shadow;
+    background-color: darken($alternate, 25%);
+    // display: flex;
+    // flex-direction: column;
+    color: darken($secondary, 40%);
+  }
+  section {
+    .editorWrap {
+      width: 600px;
+      margin: 18px auto; 
+      border: $common-border;
+      background-color: $alternate;
 
-  section{
-    padding: 0.5em;
-    .header{
-      text-align: left;
-      //background-color: white;
-      min-height: 2vh;
-      font-size: calc(12px + 1vmin);
-      display: flex;
-      flex-direction: column;
-      color: purple;
+      .header{
+        right: -1px;
+        width: 100%;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 200px;
+        resize: vertical;
+        font-size: calc(10px + 1vmin);
+        color: black;
+      }
+
+      /* textarea:focus {
+        border: 1px solid green;
+      }
+
+      textarea:invalid {
+        border: 1px solid red;
+      } */
     }
-    .textarea{
-      width: 100%;
-      min-height: 30vh;
-      //font- family:
-      font-size:calc(10px + 1vmin);
-      color: black;
-    }
-    .textarea:focus{
-      border: 1px solid green;
-    }
-    .textarea:invalid{
-      border: 1px solid red;
+    .previewerWrap{
+      border: $common-border;
+      width: 800px;
+      margin: 20px auto;
+      min-height: 200px;
+      overflow-wrap: break-word;
+      background-color: $alternate;
+      .header{
+        left: -1px;
+        width: 100%;
+      }
+      #preview{
+        margin-left: 5px;
+        width: 100%;
+      }
+      table{
+        width: 98%;
+      }
+      .img{
+        // max-width: 100px;
+        background-color: $alternate;
+        border: 0px;
+      }
     }
   }
 }
